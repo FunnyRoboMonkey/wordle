@@ -1,0 +1,141 @@
+/* theme colors */
+:root {
+  --bg: #121213;
+  --tile: #121213;
+  --text: #ffffff;
+  --correct: #538d4e;
+  --present: #b59f3b;
+  --absent: #3a3a3c;
+  --border: #3a3a3c;
+}
+
+* { box-sizing: border-box; }
+
+/* page layout */
+body {
+  margin: 0;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* game box */
+.game {
+  width: min(100%, 500px);
+  padding: 20px 16px 40px;
+}
+
+/* title bar */
+.header {
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* 6x5 board */
+.board {
+  display: grid;
+  gap: 8px;
+  margin: 20px auto 24px;
+  width: min(100%, 360px);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+/* tile box */
+.tile {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 2px solid var(--border);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* filled tile */
+.tile.filled {
+  border-color: #565758;
+  background: var(--tile);
+}
+
+/* guess states */
+.tile.correct {
+  background: var(--correct);
+  border-color: var(--correct);
+}
+
+.tile.present {
+  background: var(--present);
+  border-color: var(--present);
+}
+
+.tile.absent {
+  background: var(--absent);
+  border-color: var(--absent);
+}
+
+/* controls */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.controls.game-won #guess-input,
+.controls.game-won #guess-btn {
+  display: none;
+}
+
+input {
+  width: min(100%, 260px);
+  height: 50px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 1.1rem;
+  text-align: center;
+  text-transform: lowercase;
+  letter-spacing: 0.08em;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  background: #818384;
+  color: var(--text);
+  font-weight: 700;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+/* status msg */
+.status {
+  min-height: 24px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.status.win {
+  color: #8fd18a;
+  font-weight: 700;
+}
