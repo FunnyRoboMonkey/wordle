@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wordle by Varad Nair</title>
+    <!-- css -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- game shell -->
+    <div class="game">
+      <!-- title -->
+      <div class="header">
+        <h1>Wordle</h1>
+        <h2>by Varad Nair</h2>
+      </div>
+
+      <!-- board area -->
+      <div class="board" id="board"></div>
+
+      <!-- controls -->
+      <div class="controls">
+        <input id="guess-input" maxlength="5" placeholder="GUESS" />
+        <button id="guess-btn">Submit</button>
+        <button id="reset-btn" type="button">New Game</button>
+      </div>
+
+      <!-- status text -->
+      <div class="status" id="status">Start guessing!</div>
+    </div>
+
+    <!-- js -->
+    <script src="script.js"></script>
+  </body>
+</html>
